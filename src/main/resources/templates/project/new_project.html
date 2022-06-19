@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/style.css" th:href="@{/css/style.css}" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Create new Project</title>
+</head>
+<body>
+<div class="container">
+    <div class="new-project">
+        <form action="/project/save" th:object="${project}" method="post">
+            <input type="text" placeholder="Project Name" th:field="${project.projectName}">
+
+            <select th:field="${project.projectStage}">
+                <option th:value="NOTSTARTED">Not Started</option>
+                <option th:value="INPROGRESS">In Progress</option>
+                <option th:value="COMPLETED">Completed</option>
+            </select>
+
+            <textarea type="text" placeholder="Enter Project Description" th:field="${project.projectDesc}"></textarea>
+
+            <button type="submit"> Create Project</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
