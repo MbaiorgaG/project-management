@@ -122,6 +122,7 @@ public class DateUtil {
         return f.parse(date);
     }
 
+
     public static Date addDaysToDate(Date date, int days){
         Calendar c = Calendar.getInstance();
         c.setTime(date); // Now use today date.
