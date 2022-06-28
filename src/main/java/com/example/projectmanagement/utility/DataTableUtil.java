@@ -6,7 +6,7 @@ import org.springframework.data.jpa.datatables.mapping.DataTablesInput;
 
 public class DataTableUtil {
 
-    public static Pageable AgetPageable(DataTablesInput input){
+    public static Pageable getPageable(DataTablesInput input){
         if(input.getLength() < 0){
             return PageRequest.of(input.getStart(), Integer.MAX_VALUE);
         }
