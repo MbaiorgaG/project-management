@@ -3,6 +3,7 @@ package com.example.projectmanagement.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.apachecommons.CommonsLog;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -26,8 +27,10 @@ public class AbstractEntity implements Serializable {
     @Version
     protected int version;
 
+    @Column
     protected String delFlag = "N";
 
+    @Column
     protected Date deletedOn;
 
 
